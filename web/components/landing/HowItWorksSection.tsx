@@ -10,10 +10,10 @@ const steps = [
     title: "Join a Group",
     description:
       "Enter a code to join an existing savings circle, or create your own and invite your barkada, family, or co-workers.",
-    color: "bg-emerald-500",
-    glow: "shadow-emerald-200",
-    textColor: "text-emerald-600",
-    bgLight: "bg-emerald-50",
+    color: "bg-[#488D9F]",
+    glow: "shadow-[#7FB9C6]/30",
+    textColor: "text-[#488D9F]",
+    bgLight: "bg-[#E4F1F4]",
   },
   {
     number: "02",
@@ -21,10 +21,10 @@ const steps = [
     title: "Save & Participate",
     description:
       "Contribute your fixed monthly amount and take part in loan approvals. Every voice counts — it's a democracy of money.",
-    color: "bg-blue-500",
-    glow: "shadow-blue-200",
-    textColor: "text-blue-600",
-    bgLight: "bg-blue-50",
+    color: "bg-[#5FA3B3]",
+    glow: "shadow-[#7FB9C6]/30",
+    textColor: "text-[#488D9F]",
+    bgLight: "bg-[#E4F1F4]",
   },
   {
     number: "03",
@@ -32,10 +32,10 @@ const steps = [
     title: "Borrow & Grow",
     description:
       "Request funds when you need them, repay with fair interest that goes back to the group — not a faceless corporation.",
-    color: "bg-violet-500",
-    glow: "shadow-violet-200",
-    textColor: "text-violet-600",
-    bgLight: "bg-violet-50",
+    color: "bg-[#6DAAB8]",
+    glow: "shadow-[#9DCBD4]/30",
+    textColor: "text-[#4F93A3]",
+    bgLight: "bg-[#EAF4F6]",
   },
 ];
 
@@ -51,7 +51,7 @@ export function HowItWorksSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <p className="text-sm font-semibold text-emerald-600 uppercase tracking-widest mb-3">
+          <p className="text-sm font-semibold text-[#488D9F] uppercase tracking-widest mb-3">
             Simple process
           </p>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">
@@ -66,7 +66,7 @@ export function HowItWorksSection() {
         {/* Steps */}
         <div className="relative">
           {/* Connecting line on desktop */}
-          <div className="hidden lg:block absolute top-14 left-1/2 -translate-x-1/2 w-[68%] h-px bg-gradient-to-r from-emerald-200 via-blue-200 to-violet-200" />
+          <div className="hidden lg:block absolute top-14 left-1/2 -translate-x-1/2 w-[68%] h-px bg-gradient-to-r from-[#BFDDE3] via-[#9DCBD4] to-[#BFDDE3]" />
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-6">
             {steps.map((step, i) => {

@@ -18,7 +18,7 @@ const features = [
     title: "Join or Create a Savings Group",
     description:
       "Start your own circle or enter a code to join an existing barkada, family, or colleague group. No strangers, only people you trust.",
-    color: "bg-emerald-50 text-emerald-600",
+    color: "bg-[#E4F1F4] text-[#488D9F]",
     badge: "Groups",
   },
   {
@@ -26,7 +26,7 @@ const features = [
     title: "Fixed Monthly Contributions",
     description:
       "Everyone commits to a set monthly amount. No more chasing — contributions are tracked automatically so nothing slips through.",
-    color: "bg-blue-50 text-blue-600",
+    color: "bg-[#E4F1F4] text-[#488D9F]",
     badge: "Auto-tracking",
   },
   {
@@ -34,7 +34,7 @@ const features = [
     title: "Community-Voted Loans",
     description:
       "Any member can request a loan, and the group votes together. Transparent, fair, and built on trust — not a credit score.",
-    color: "bg-violet-50 text-violet-600",
+    color: "bg-[#EAF4F6] text-[#4F93A3]",
     badge: "Democratic",
   },
   {
@@ -58,7 +58,7 @@ const features = [
     title: "Secure & Private",
     description:
       "Your group's data is encrypted and only accessible to members. No third-party selling your info, no hidden fees, ever.",
-    color: "bg-teal-50 text-teal-600",
+    color: "bg-[#E4F1F4] text-[#488D9F]",
     badge: "Secure",
   },
 ];
@@ -85,7 +85,7 @@ export function FeaturesSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-14"
         >
-          <p className="text-sm font-semibold text-emerald-600 uppercase tracking-widest mb-3">
+          <p className="text-sm font-semibold text-[#488D9F] uppercase tracking-widest mb-3">
             What&apos;s inside
           </p>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">

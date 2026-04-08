@@ -35,7 +35,7 @@ export function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center shadow-md group-hover:shadow-emerald-200 transition-shadow">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#488D9F] to-[#3E7C8C] flex items-center justify-center shadow-md group-hover:shadow-[#7FB9C6]/30 transition-shadow">
               <Coins className="w-4 h-4 text-white" />
             </div>
             <span className="font-bold text-lg text-gray-900 tracking-tight">
@@ -62,7 +62,7 @@ export function Navbar() {
               href="#waitlist"
               className={cn(
                 buttonVariants({ variant: "default" }),
-                "bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white shadow-sm rounded-full px-5 text-sm font-semibold border-0"
+                "bg-gradient-to-r from-[#488D9F] to-[#3E7C8C] hover:from-[#3E7C8C] hover:to-[#356B79] text-white shadow-sm rounded-full px-5 text-sm font-semibold border-0"
               )}
             >
               Join Waitlist →
@@ -104,7 +104,7 @@ export function Navbar() {
                 onClick={() => setMobileOpen(false)}
                 className={cn(
                   buttonVariants({ variant: "default" }),
-                  "w-full justify-center bg-gradient-to-r from-emerald-500 to-teal-600 text-white rounded-full font-semibold border-0"
+                  "w-full justify-center bg-gradient-to-r from-[#488D9F] to-[#3E7C8C] text-white rounded-full font-semibold border-0"
                 )}
               >
                 Join Waitlist →

@@ -12,7 +12,7 @@ const testimonials = [
     name: "Donna A.",
     role: "Sari-sari store owner, Batangas",
     avatar: "D",
-    color: "from-emerald-400 to-teal-500",
+    color: "from-[#5FA3B3] to-[#488D9F]",
   },
   {
     rating: 5,
@@ -21,7 +21,7 @@ const testimonials = [
     name: "Paolo R.",
     role: "BPO Team Lead, BGC",
     avatar: "P",
-    color: "from-blue-400 to-indigo-500",
+    color: "from-[#7FB9C6] to-[#5FA3B3]",
   },
   {
     rating: 5,
@@ -30,7 +30,7 @@ const testimonials = [
     name: "Grace T.",
     role: "OFW, Abroad",
     avatar: "G",
-    color: "from-violet-400 to-purple-500",
+    color: "from-[#8AC1CC] to-[#6DAAB8]",
   },
 ];
 
@@ -84,7 +84,7 @@ export function TestimonialsSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-14"
         >
-          <p className="text-sm font-semibold text-emerald-600 uppercase tracking-widest mb-3">
+          <p className="text-sm font-semibold text-[#488D9F] uppercase tracking-widest mb-3">
             Early users
           </p>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">
@@ -142,8 +142,8 @@ export function TestimonialsSection() {
             const Icon = badge.icon;
             return (
               <div key={i} className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center flex-shrink-0">
-                  <Icon className="w-5 h-5 text-emerald-600" />
+                <div className="w-10 h-10 rounded-xl bg-[#E4F1F4] flex items-center justify-center flex-shrink-0">
+                  <Icon className="w-5 h-5 text-[#488D9F]" />
                 </div>
                 <div>
                   <p className="font-semibold text-gray-900 text-sm">

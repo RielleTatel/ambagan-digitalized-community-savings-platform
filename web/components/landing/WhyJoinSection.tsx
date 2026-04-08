@@ -11,7 +11,7 @@ const reasons = [
     name: "Ate Len",
     role: "Teacher, Quezon City",
     avatar: "L",
-    color: "from-emerald-400 to-teal-500",
+    color: "from-[#5FA3B3] to-[#488D9F]",
   },
   {
     quote:
@@ -19,7 +19,7 @@ const reasons = [
     name: "Kuya Renz",
     role: "Small business owner, Cebu",
     avatar: "R",
-    color: "from-blue-400 to-indigo-500",
+    color: "from-[#7FB9C6] to-[#5FA3B3]",
   },
   {
     quote:
@@ -27,7 +27,7 @@ const reasons = [
     name: "Mia Santos",
     role: "Freelancer, Manila",
     avatar: "M",
-    color: "from-violet-400 to-purple-500",
+    color: "from-[#8AC1CC] to-[#6DAAB8]",
   },
   {
     quote:
@@ -61,7 +61,7 @@ export function WhyJoinSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-14"
         >
-          <p className="text-sm font-semibold text-emerald-600 uppercase tracking-widest mb-3">
+          <p className="text-sm font-semibold text-[#488D9F] uppercase tracking-widest mb-3">
             Real people, real stories
           </p>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">
@@ -86,7 +86,7 @@ export function WhyJoinSection() {
                 <CardContent className="p-7 flex flex-col gap-5">
                   {/* Quote */}
                   <div className="relative">
-                    <span className="absolute -top-2 -left-1 text-5xl text-emerald-100 font-serif leading-none select-none">
+                    <span className="absolute -top-2 -left-1 text-5xl text-[#D5E9EE] font-serif leading-none select-none">
                       &ldquo;
                     </span>
                     <p className="relative z-10 text-gray-700 text-[15px] leading-relaxed pl-4 pt-3">

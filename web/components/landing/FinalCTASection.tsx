@@ -18,7 +18,7 @@ const appPreviews = [
     label: "Group Balance",
     value: "₱45,200",
     sub: "8 active members",
-    color: "from-emerald-500 to-teal-600",
+    color: "from-[#488D9F] to-[#3E7C8C]",
     iconBg: "bg-white/20",
   },
   {
@@ -26,7 +26,7 @@ const appPreviews = [
     label: "Interest Earned",
     value: "₱3,840",
     sub: "This cycle",
-    color: "from-blue-500 to-indigo-600",
+    color: "from-[#5FA3B3] to-[#488D9F]",
     iconBg: "bg-white/20",
   },
   {
@@ -34,7 +34,7 @@ const appPreviews = [
     label: "Loan Votes",
     value: "6 / 8",
     sub: "Approved this month",
-    color: "from-violet-500 to-purple-600",
+    color: "from-[#6DAAB8] to-[#4F93A3]",
     iconBg: "bg-white/20",
   },
 ];
@@ -55,9 +55,9 @@ export function FinalCTASection() {
     >
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl" />
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-violet-500/5 rounded-full blur-3xl" />
+        <div className="absolute -top-40 -right-40 w-96 h-96 bg-[#488D9F]/10 rounded-full blur-3xl" />
+        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-[#5FA3B3]/10 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#6DAAB8]/5 rounded-full blur-3xl" />
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -114,7 +114,7 @@ export function FinalCTASection() {
           >
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight tracking-tight">
               Get Instant Access to{" "}
-              <span className="bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#5FA3B3] to-[#5FA3B3] bg-clip-text text-transparent">
                 Smarter Community Savings
               </span>
             </h2>
@@ -129,7 +129,7 @@ export function FinalCTASection() {
               className="mt-8 flex flex-col sm:flex-row gap-3 max-w-md mx-auto lg:mx-0"
             >
               {submitted ? (
-                <div className="flex items-center gap-2 bg-emerald-500/20 border border-emerald-500/40 rounded-full px-5 py-3.5 text-emerald-400 font-medium text-sm w-full justify-center">
+                <div className="flex items-center gap-2 bg-[#488D9F]/20 border border-[#488D9F]/40 rounded-full px-5 py-3.5 text-[#7FB9C6] font-medium text-sm w-full justify-center">
                   <CheckCircle className="w-4 h-4" />
                   You&apos;re on the list! We&apos;ll reach out soon.
                 </div>
@@ -141,11 +141,11 @@ export function FinalCTASection() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
-                    className="flex-1 rounded-full bg-white/10 border-white/20 text-white placeholder:text-gray-400 px-5 h-12 text-sm backdrop-blur-sm focus:border-emerald-400 focus:ring-emerald-400/30"
+                    className="flex-1 rounded-full bg-white/10 border-white/20 text-white placeholder:text-gray-400 px-5 h-12 text-sm backdrop-blur-sm focus:border-[#5FA3B3] focus:ring-[#5FA3B3]/30"
                   />
                   <Button
                     type="submit"
-                    className="rounded-full bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white h-12 px-6 font-semibold text-sm shadow-lg shadow-emerald-900/50 whitespace-nowrap"
+                    className="rounded-full bg-gradient-to-r from-[#488D9F] to-[#3E7C8C] hover:from-[#5FA3B3] hover:to-[#488D9F] text-white h-12 px-6 font-semibold text-sm shadow-lg shadow-[#2F5E69]/40 whitespace-nowrap"
                   >
                     Join the Waitlist
                     <ArrowRight className="ml-2 w-4 h-4" />
@@ -162,7 +162,7 @@ export function FinalCTASection() {
                 "Be first when we launch",
               ].map((item, i) => (
                 <span key={i} className="flex items-center gap-1.5">
-                  <CheckCircle className="w-3 h-3 text-emerald-500" />
+                  <CheckCircle className="w-3 h-3 text-[#488D9F]" />
                   {item}
                 </span>
               ))}
@@ -175,7 +175,7 @@ export function FinalCTASection() {
       <div className="relative z-10 mt-20 pt-8 border-t border-white/10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
           <div className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center">
+            <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-[#488D9F] to-[#3E7C8C] flex items-center justify-center">
               <Wallet className="w-3.5 h-3.5 text-white" />
             </div>
             <span className="font-bold text-white text-sm">Ambagan</span>

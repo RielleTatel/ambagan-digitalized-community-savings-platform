@@ -56,7 +56,7 @@ export function PainPointsSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-14"
         >
-          <p className="text-sm font-semibold text-emerald-600 uppercase tracking-widest mb-3">
+          <p className="text-sm font-semibold text-[#488D9F] uppercase tracking-widest mb-3">
             We get it
           </p>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">
@@ -82,7 +82,7 @@ export function PainPointsSection() {
                 <CardContent className="p-6 flex flex-col gap-4">
                   <div className="flex items-start justify-between">
                     <span className="text-3xl">{point.emoji}</span>
-                    <MessageSquareQuote className="w-5 h-5 text-gray-200 group-hover:text-emerald-300 transition-colors" />
+                    <MessageSquareQuote className="w-5 h-5 text-gray-200 group-hover:text-[#9DCBD4] transition-colors" />
                   </div>
                   <blockquote className="text-gray-700 text-[15px] leading-relaxed font-medium italic">
                     &ldquo;{point.quote}&rdquo;
@@ -97,12 +97,12 @@ export function PainPointsSection() {
 
           {/* Closing card */}
           <motion.div variants={itemVariants} className="sm:col-span-2 lg:col-span-1">
-            <Card className="h-full border-0 bg-gradient-to-br from-emerald-500 to-teal-600 text-white shadow-lg shadow-emerald-200">
+            <Card className="h-full border-0 bg-gradient-to-br from-[#488D9F] to-[#3E7C8C] text-white shadow-lg shadow-[#7FB9C6]/30">
               <CardContent className="p-6 flex flex-col justify-center gap-3 h-full">
                 <p className="text-2xl font-extrabold leading-tight">
                   That&apos;s why we built Ambagan.
                 </p>
-                <p className="text-emerald-100 text-sm leading-relaxed">
+                <p className="text-[#D5E9EE] text-sm leading-relaxed">
                   A smarter, safer, community-powered way to save, borrow, and
                   grow money together.
                 </p>
