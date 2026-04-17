@@ -1,8 +1,9 @@
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+
 import { createUser, findUserByEmail } from "../repositories/userRepo";
 
-const JWT_SECRET = "your-secret-key"; // later move to .env
+const JWT_SECRET = "your-secret-key"; 
 
 export async function registerUser(data: {
   name: string;

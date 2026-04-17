@@ -12,7 +12,7 @@ type FormErrors = {
   email?: string;
   password?: string;
   general?: string;
-};
+}; 
 
 function Spinner() {
   return (
@@ -58,18 +58,42 @@ export default function LoginPage() {
     return errs;
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = async (e: React.FormEvent) => { 
+    e.preventDefault(); 
     const errs = validate();
     if (Object.keys(errs).length) {
       setErrors(errs);
       return;
     }
     setErrors({});
-    setLoading(true);
-    await new Promise((r) => setTimeout(r, 1500));
-    setLoading(false);
-    setErrors({ general: "Invalid email or password. Please try again." });
+    setLoading(true); 
+
+    try {
+      const response = await fetch("/api/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          password,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Invalid email or password. Please try again.");
+      }
+ 
+    } catch (err) {
+      setErrors({
+        general:
+          err instanceof Error
+            ? err.message
+            : "Login failed. Please try again.",
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (

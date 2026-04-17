@@ -7,7 +7,8 @@ export async function POST(req: Request) {
     const user = await registerUser(body);
 
     return Response.json(user);
-  } catch (error: any) {
-    return new Response(error.message, { status: 400 });
+  } catch (error: unknown) {
+    const message = error instanceof Error ? error.message : "Registration failed";
+    return new Response(message, { status: 400 });
   }
 }
