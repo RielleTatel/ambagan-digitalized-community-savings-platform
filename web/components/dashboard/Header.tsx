@@ -1,29 +1,10 @@
 import { Bell, Search } from "lucide-react";
 
-interface HeaderProps {
-  title?: string;
-  subtitle?: string;
-  userName?: string;
-}
-
-export function Header({
-  title = "Gorilla Community Savings Fund!",
-  subtitle = "Track your savings, members, and fund activity.",
-  userName = "Gabrielle",
-}: HeaderProps) {
+export function Header() {
   return (
     <div className="flex flex-col gap-1">
       {/* Greeting row */}
       <div className="flex items-center justify-between">
-        <div>
-          <p className="text-sm text-gray-400 font-medium">
-            Welcome back, {userName} 👋
-          </p>
-          <h1 className="text-2xl font-extrabold text-[#12303A] tracking-tight leading-tight mt-0.5">
-            {title}
-          </h1>
-          <p className="text-sm text-gray-500 mt-1">{subtitle}</p>
-        </div>
 
         {/* Actions */}
         <div className="flex items-center gap-3">

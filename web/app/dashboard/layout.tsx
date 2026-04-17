@@ -6,7 +6,7 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex min-h-screen bg-[#E4F1F4] p-3 gap-3">
+    <div className="flex min-h-screen bg-[#E4F1F4] p-5 gap-3">
       {/* Sidebar is rendered once here — never re-mounts on page changes */}
       <Sidebar />
 

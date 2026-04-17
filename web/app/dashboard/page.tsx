@@ -22,44 +22,55 @@ export default function Dashboard() {
   return (
     <>
       {/* ── Left Panel ── */}
-      <aside className="flex flex-col gap-3 w-64 shrink-0">
-        {/* Header (mobile falls here; desktop uses right placement) */}
-        <div className="lg:hidden">
-          <Header />
+      <aside className="flex flex-col gap-5 w-64 shrink-0">
+
+        {/* Individual Savings */} 
+        <div>
+          <div className="mb-3">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#488D9F]">
+              Dashboard
+            </p>
+            <h2 className="mt-1.5 text-2xl font-extrabold tracking-tight leading-tight text-[#12303A] lg:text-[2rem]">
+              Welcome back, Gabrielle
+            </h2>
+            <p className="mt-2 max-w-xs text-sm leading-relaxed text-gray-500">
+              Here is your savings activity snapshot for today.
+            </p>
+          </div>
+
+          <SectionCard
+            title="Individual Savings"
+            icon={PiggyBank}
+            iconColor="bg-[#EAF5F8] text-[#488D9F]"
+            badge="Active"
+            badgeColor="bg-emerald-50 text-emerald-600"
+          >
+            <div className="flex flex-col gap-2 mt-1">
+              <div className="flex items-center justify-between text-sm">
+                <span className="text-gray-500">Your balance</span>
+                <span className="font-extrabold text-[#12303A]">₱8,000</span>
+              </div>
+              <div className="flex items-center justify-between text-sm">
+                <span className="text-gray-500">Monthly share</span>
+                <span className="font-semibold text-[#488D9F]">₱1,000</span>
+              </div>
+              {/* Mini progress bar */}
+              <div className="mt-1">
+                <div className="flex justify-between text-[10px] text-gray-400 mb-1">
+                  <span>Progress to goal</span>
+                  <span>80%</span>
+                </div>
+                <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
+                  <div
+                    className="h-full bg-linear-to-r from-[#488D9F] to-[#A8D9E4] rounded-full"
+                    style={{ width: "80%" }}
+                  />
+                </div>
+              </div>
+            </div>
+          </SectionCard>
         </div>
 
-        {/* Individual Savings */}
-        <SectionCard
-          title="Individual Savings"
-          icon={PiggyBank}
-          iconColor="bg-[#EAF5F8] text-[#488D9F]"
-          badge="Active"
-          badgeColor="bg-emerald-50 text-emerald-600"
-        >
-          <div className="flex flex-col gap-2 mt-1">
-            <div className="flex items-center justify-between text-sm">
-              <span className="text-gray-500">Your balance</span>
-              <span className="font-extrabold text-[#12303A]">₱8,000</span>
-            </div>
-            <div className="flex items-center justify-between text-sm">
-              <span className="text-gray-500">Monthly share</span>
-              <span className="font-semibold text-[#488D9F]">₱1,000</span>
-            </div>
-            {/* Mini progress bar */}
-            <div className="mt-1">
-              <div className="flex justify-between text-[10px] text-gray-400 mb-1">
-                <span>Progress to goal</span>
-                <span>80%</span>
-              </div>
-              <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
-                <div
-                  className="h-full bg-linear-to-r from-[#488D9F] to-[#A8D9E4] rounded-full"
-                  style={{ width: "80%" }}
-                />
-              </div>
-            </div>
-          </div>
-        </SectionCard>
 
         {/* Savings Fund Info */}
         <SectionCard
@@ -129,14 +140,14 @@ export default function Dashboard() {
       </aside>
 
       {/* ── Main Panel ── */}
-      <main className="flex flex-col gap-3 flex-1 min-w-0">
+      <main className="flex flex-col space-y-4 flex-1 min-w-0">
         {/* Header (desktop) */}
-        <div className="hidden lg:block">
+        <div className="hidden lg:flex lg:justify-end">
           <Header />
         </div>
 
         {/* Top Summary Row */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
           {/* Total Pool Balance */}
           <InfoCard
             title="Total Pool Balance"
@@ -174,10 +185,15 @@ export default function Dashboard() {
         </div>
 
         {/* Overview Stats */}
-        <OverviewStats />
+        <div className="pt-1">
+          <OverviewStats />
+        </div>
 
         {/* Group Members Table */}
-        <MembersTable />
+        <div className="pt-1">
+          <MembersTable /> 
+        </div> 
+
       </main>
     </>
   );
