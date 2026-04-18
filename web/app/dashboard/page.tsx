@@ -22,18 +22,17 @@ export default function Dashboard() {
   return (
     <>
       {/* ── Left Panel ── */}
-      <aside className="flex flex-col gap-5 w-64 shrink-0">
-
+      <aside className="flex flex-col gap-5 w-90 shrink-0">
         {/* Individual Savings */} 
-        <div>
+        <div className="mt-10">
           <div className="mb-3">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#488D9F]">
+            <p className="text-sm uppercase tracking-[0.2em] text-[#488D9F] font-inter font-semibold">
               Dashboard
             </p>
-            <h2 className="mt-1.5 text-2xl font-extrabold tracking-tight leading-tight text-[#12303A] lg:text-[2rem]">
-              Welcome back, Gabrielle
+            <h2 className="mt-1.5 font-bold text-2xl font-inter tracking-tight leading-tight text-[#12303A] lg:text-[2.25rem]">
+              Gorilla Community Savings Fund!
             </h2>
-            <p className="mt-2 max-w-xs text-sm leading-relaxed text-gray-500">
+            <p className="mt-2 max-w-xs text-[0.9rem] leading-relaxed text-gray-500">
               Here is your savings activity snapshot for today.
             </p>
           </div>
@@ -46,17 +45,17 @@ export default function Dashboard() {
             badgeColor="bg-emerald-50 text-emerald-600"
           >
             <div className="flex flex-col gap-2 mt-1">
-              <div className="flex items-center justify-between text-sm">
+              <div className="flex items-center justify-between text-[0.9rem]">
                 <span className="text-gray-500">Your balance</span>
                 <span className="font-extrabold text-[#12303A]">₱8,000</span>
               </div>
-              <div className="flex items-center justify-between text-sm">
+              <div className="flex items-center justify-between text-[0.9rem]">
                 <span className="text-gray-500">Monthly share</span>
                 <span className="font-semibold text-[#488D9F]">₱1,000</span>
               </div>
               {/* Mini progress bar */}
               <div className="mt-1">
-                <div className="flex justify-between text-[10px] text-gray-400 mb-1">
+                <div className="flex justify-between text-xs text-gray-400 mb-1">
                   <span>Progress to goal</span>
                   <span>80%</span>
                 </div>
@@ -115,16 +114,16 @@ export default function Dashboard() {
           badgeColor="bg-rose-50 text-rose-500"
         >
           <div className="flex flex-col gap-2 mt-1">
-            <div className="flex items-center justify-between text-sm">
+            <div className="flex items-center justify-between text-[0.9rem]">
               <span className="text-gray-500">Amount borrowed</span>
               <span className="font-extrabold text-[#12303A]">₱5,000</span>
             </div>
-            <div className="flex items-center justify-between text-sm">
+            <div className="flex items-center justify-between text-[0.9rem]">
               <span className="text-gray-500">Due date</span>
               <span className="font-semibold text-rose-500">May 30, 2026</span>
             </div>
             <div className="mt-1">
-              <div className="flex justify-between text-[10px] text-gray-400 mb-1">
+              <div className="flex justify-between text-xs text-gray-400 mb-1">
                 <span>Repaid</span>
                 <span>40%</span>
               </div>
@@ -164,7 +163,7 @@ export default function Dashboard() {
                 <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest">
                   Pool Chart
                 </p>
-                <p className="text-sm font-bold text-[#12303A] mt-0.5">
+                <p className="text-base font-bold text-[#12303A] mt-0.5">
                   Monthly Contribution Growth
                 </p>
               </div>

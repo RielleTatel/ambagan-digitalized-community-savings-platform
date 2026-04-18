@@ -49,12 +49,12 @@ export function SectionCard({
               <Icon className="w-4 h-4" />
             </div>
           )}
-          <h3 className="text-sm font-bold text-[#12303A]">{title}</h3>
+          <h3 className="text-base font-bold text-[#12303A]">{title}</h3>
         </div>
         {badge && (
           <span
             className={cn(
-              "text-[10px] font-bold px-2.5 py-1 rounded-full",
+              "text-xs font-bold px-2.5 py-1 rounded-full",
               badgeColor
             )}
           >

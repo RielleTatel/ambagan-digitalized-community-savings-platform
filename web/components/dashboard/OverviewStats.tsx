@@ -46,7 +46,7 @@ export function OverviewStats({
     >
       {/* Header */}
       <div className="flex items-center justify-between">
-        <h3 className="text-sm font-bold text-[#12303A]">Overview</h3>
+        <h3 className="text-base font-bold text-[#12303A]">Overview</h3>
         <button className="text-xs font-semibold bg-[#12303A] text-white px-4 py-1.5 rounded-full hover:bg-[#1E4D5C] transition-colors">
           Activity Ledger
         </button>
@@ -59,16 +59,16 @@ export function OverviewStats({
             key={i}
             className="rounded-xl bg-gray-50 border border-gray-100 p-4 flex flex-col gap-1.5"
           >
-            <p className="text-[10px] font-semibold text-gray-400 uppercase tracking-wider">
+            <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider">
               {stat.label}
             </p>
-            <p className="text-xl font-extrabold text-[#12303A] tracking-tight">
+            <p className="text-2xl font-extrabold text-[#12303A] tracking-tight">
               {stat.value}
             </p>
             {stat.change && (
               <p
                 className={cn(
-                  "text-[11px] font-medium",
+                  "text-xs font-medium",
                   stat.positive ? "text-emerald-500" : "text-amber-500"
                 )}
               >

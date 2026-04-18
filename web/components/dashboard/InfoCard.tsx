@@ -70,7 +70,7 @@ export function InfoCard({
       {subtitle && (
         <p
           className={cn(
-            "text-xs",
+            "text-sm",
             accent ? "text-white/55" : "text-gray-400"
           )}
         >

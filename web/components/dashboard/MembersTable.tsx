@@ -85,8 +85,8 @@ export function MembersTable({
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h3 className="text-sm font-bold text-[#12303A]">Group Members</h3>
-          <p className="text-xs text-gray-400 mt-0.5">
+          <h3 className="text-base font-bold text-[#12303A]">Group Members</h3>
+          <p className="text-sm text-gray-400 mt-0.5">
             {members.length} active members this cycle
           </p>
         </div>
@@ -144,7 +144,7 @@ export function MembersTable({
                 <td className="px-2 py-3">
                   <span
                     className={cn(
-                      "text-[11px] font-semibold px-2.5 py-1 rounded-full",
+                      "text-xs font-semibold px-2.5 py-1 rounded-full",
                       statusStyle[member.status]
                     )}
                   >
