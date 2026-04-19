@@ -20,6 +20,12 @@ interface FormErrors {
   contribution?: string;
 }
 
+const inputBase = cn(
+  "h-12 w-full rounded-xl border px-4 text-sm text-[#12303A] bg-white outline-none",
+  "placeholder:text-[#488D9F]/40 transition-all duration-200",
+  "border-[#D6ECF0] focus:border-[#488D9F] focus:ring-2 focus:ring-[#488D9F]/15"
+);
+
 export function CreateGroupModal({ isOpen, onClose }: CreateGroupModalProps) {
   const [form, setForm] = useState<FormState>({
     name: "",
@@ -71,24 +77,36 @@ export function CreateGroupModal({ isOpen, onClose }: CreateGroupModalProps) {
       onClick={(e) => e.target === e.currentTarget && handleClose()}
     >
       {/* Backdrop */}
-      <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
+      <div className="absolute inset-0 bg-[#12303A]/40 backdrop-blur-sm" />
 
-      {/* Modal */}
-      <div className="relative z-10 w-full max-w-md rounded-2xl bg-white shadow-xl border border-gray-100 overflow-hidden">
+      {/* Modal panel */}
+      <div
+        className={cn(
+          "relative z-10 w-full max-w-md rounded-2xl bg-white overflow-hidden",
+          "border border-[#D6ECF0]",
+          "shadow-[0_20px_40px_rgba(72,141,159,0.2),0_0_0_1px_rgba(72,141,159,0.05)]"
+        )}
+      >
+        {/* Header accent bar — teal gradient */}
+        <div className="h-1 w-full bg-gradient-to-r from-[#488D9F] to-[#3E7C8C]" />
+
         {/* Header */}
         <div className="p-6 pb-0 flex items-start justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-[#EAF5F8] flex items-center justify-center">
-              <PiggyBank className="w-5 h-5 text-[#488D9F]" />
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#488D9F] to-[#3E7C8C] flex items-center justify-center shadow-[0_4px_14px_rgba(72,141,159,0.3)]">
+              <PiggyBank className="w-5 h-5 text-white" />
             </div>
             <div>
-              <h2 className="text-base font-bold text-[#12303A]">Create a Group</h2>
-              <p className="text-xs text-gray-400 mt-0.5">Start a new savings community</p>
+              <h2 className="text-base font-semibold text-[#12303A]">Create a Group</h2>
+              <p className="text-xs text-[#488D9F]/70 mt-0.5">Start a new savings community</p>
             </div>
           </div>
           <button
             onClick={handleClose}
-            className="w-8 h-8 rounded-lg flex items-center justify-center text-gray-400 hover:bg-gray-100 hover:text-gray-600 transition-colors"
+            className={cn(
+              "w-8 h-8 rounded-lg flex items-center justify-center text-[#488D9F]/60",
+              "hover:bg-[#EAF5F8] hover:text-[#12303A] transition-colors duration-200"
+            )}
           >
             <X className="w-4 h-4" />
           </button>
@@ -96,10 +114,11 @@ export function CreateGroupModal({ isOpen, onClose }: CreateGroupModalProps) {
 
         {/* Form */}
         <div className="p-6 flex flex-col gap-4">
+
           {/* Group Name */}
           <div className="flex flex-col gap-1.5">
-            <label className="text-xs font-semibold text-[#12303A]">
-              Group Name <span className="text-red-400">*</span>
+            <label className="text-xs font-mono uppercase tracking-[0.12em] text-[#488D9F]/70">
+              Group Name <span className="text-red-400 normal-case tracking-normal">*</span>
             </label>
             <input
               type="text"
@@ -107,10 +126,8 @@ export function CreateGroupModal({ isOpen, onClose }: CreateGroupModalProps) {
               value={form.name}
               onChange={(e) => handleChange("name", e.target.value)}
               className={cn(
-                "h-10 w-full rounded-xl border px-3 text-sm text-[#12303A] outline-none transition-all",
-                "placeholder:text-gray-300",
-                "focus:border-[#488D9F] focus:ring-2 focus:ring-[#488D9F]/20",
-                errors.name ? "border-red-300 bg-red-50" : "border-gray-200 bg-gray-50"
+                inputBase,
+                errors.name && "border-red-300 ring-2 ring-red-200 bg-red-50/30"
               )}
             />
             {errors.name && (
@@ -120,11 +137,11 @@ export function CreateGroupModal({ isOpen, onClose }: CreateGroupModalProps) {
 
           {/* Monthly Contribution */}
           <div className="flex flex-col gap-1.5">
-            <label className="text-xs font-semibold text-[#12303A]">
-              Monthly Contribution (₱) <span className="text-red-400">*</span>
+            <label className="text-xs font-mono uppercase tracking-[0.12em] text-[#488D9F]/70">
+              Monthly Contribution (₱) <span className="text-red-400 normal-case tracking-normal">*</span>
             </label>
             <div className="relative">
-              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-sm font-bold text-gray-400">
+              <span className="absolute left-4 top-1/2 -translate-y-1/2 text-sm font-bold text-[#488D9F]/60 pointer-events-none">
                 ₱
               </span>
               <input
@@ -134,13 +151,10 @@ export function CreateGroupModal({ isOpen, onClose }: CreateGroupModalProps) {
                 value={form.contribution}
                 onChange={(e) => handleChange("contribution", e.target.value)}
                 className={cn(
-                  "h-10 w-full rounded-xl border pl-7 pr-3 text-sm text-[#12303A] outline-none transition-all",
-                  "placeholder:text-gray-300",
+                  inputBase,
+                  "pl-8",
                   "[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none",
-                  "focus:border-[#488D9F] focus:ring-2 focus:ring-[#488D9F]/20",
-                  errors.contribution
-                    ? "border-red-300 bg-red-50"
-                    : "border-gray-200 bg-gray-50"
+                  errors.contribution && "border-red-300 ring-2 ring-red-200 bg-red-50/30"
                 )}
               />
             </div>
@@ -149,11 +163,11 @@ export function CreateGroupModal({ isOpen, onClose }: CreateGroupModalProps) {
             )}
           </div>
 
-          {/* Description (optional) */}
+          {/* Description */}
           <div className="flex flex-col gap-1.5">
-            <label className="text-xs font-semibold text-[#12303A]">
+            <label className="text-xs font-mono uppercase tracking-[0.12em] text-[#488D9F]/70">
               Description{" "}
-              <span className="text-gray-400 font-normal">(optional)</span>
+              <span className="text-[#488D9F]/40 font-normal normal-case tracking-normal">(optional)</span>
             </label>
             <textarea
               placeholder="Brief description of your group's purpose..."
@@ -161,10 +175,9 @@ export function CreateGroupModal({ isOpen, onClose }: CreateGroupModalProps) {
               onChange={(e) => handleChange("description", e.target.value)}
               rows={3}
               className={cn(
-                "w-full rounded-xl border px-3 py-2.5 text-sm text-[#12303A] resize-none outline-none transition-all",
-                "placeholder:text-gray-300",
-                "focus:border-[#488D9F] focus:ring-2 focus:ring-[#488D9F]/20",
-                "border-gray-200 bg-gray-50"
+                "w-full rounded-xl border border-[#D6ECF0] px-4 py-3 text-sm text-[#12303A]",
+                "bg-white placeholder:text-[#488D9F]/40 resize-none outline-none",
+                "focus:border-[#488D9F] focus:ring-2 focus:ring-[#488D9F]/15 transition-all duration-200"
               )}
             />
           </div>
@@ -174,8 +187,15 @@ export function CreateGroupModal({ isOpen, onClose }: CreateGroupModalProps) {
             onClick={handleSubmit}
             disabled={isSubmitting}
             className={cn(
-              "mt-1 h-10 rounded-xl text-sm font-semibold flex items-center justify-center gap-2 transition-all duration-150",
-              "bg-[#488D9F] text-white hover:bg-[#3E7C8C] disabled:opacity-60 disabled:cursor-not-allowed"
+              "group mt-1 h-11 rounded-xl text-sm font-semibold flex items-center justify-center gap-2 transition-all duration-200 ease-out",
+              !isSubmitting
+                ? cn(
+                    "bg-gradient-to-r from-[#488D9F] to-[#3E7C8C] text-white",
+                    "shadow-[0_4px_14px_rgba(72,141,159,0.3)]",
+                    "hover:shadow-[0_8px_24px_rgba(72,141,159,0.4)] hover:brightness-105 hover:-translate-y-0.5",
+                    "active:scale-[0.98]"
+                  )
+                : "bg-[#EAF5F8] text-[#488D9F]/50 cursor-not-allowed"
             )}
           >
             {isSubmitting ? (
@@ -186,10 +206,11 @@ export function CreateGroupModal({ isOpen, onClose }: CreateGroupModalProps) {
             ) : (
               <>
                 Create Group
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5" />
               </>
             )}
           </button>
+
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 import { Sidebar } from "@/components/dashboard/Sidebar";
 
-export default function GroupsLayout({
+export default function ContributionsLayout({
   children,
 }: {
   children: React.ReactNode;

@@ -32,7 +32,7 @@ export function SectionCard({
   return (
     <div
       className={cn(
-        "rounded-2xl bg-white border border-gray-100 shadow-sm p-5 flex flex-col gap-3",
+        "rounded-2xl bg-white border border-[#D6ECF0] shadow-sm p-5 flex flex-col gap-3",
         className
       )}
     >
@@ -68,7 +68,7 @@ export function SectionCard({
         <ul className="flex flex-col gap-2 mt-1">
           {bullets.map((item, i) => (
             <li key={i} className="flex items-center justify-between text-sm">
-              <span className="text-gray-500 flex items-center gap-1.5">
+              <span className="text-[#488D9F]/70 flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#488D9F] inline-block" />
                 {item.label}
               </span>
@@ -80,8 +80,8 @@ export function SectionCard({
 
       {/* Placeholder */}
       {placeholder && !children && (
-        <div className="mt-1 rounded-xl bg-gray-50 border border-dashed border-gray-200 py-6 flex items-center justify-center">
-          <p className="text-xs text-gray-400">{placeholder}</p>
+        <div className="mt-1 rounded-xl bg-[#EAF5F8] border border-dashed border-[#D6ECF0] py-6 flex items-center justify-center">
+          <p className="text-xs text-[#488D9F]/50">{placeholder}</p>
         </div>
       )}
 

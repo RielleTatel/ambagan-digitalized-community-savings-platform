@@ -61,8 +61,8 @@ export function Sidebar({ className }: SidebarProps) {
                 className={cn(
                   "w-full flex items-center justify-center p-3 rounded-xl transition-all duration-200",
                   isActive
-                    ? "bg-[#488D9F] text-[#488D9F] shadow-sm"
-                    : "text-[#488D9F]/60 hover:bg-[#EAF5F8] hover:text-[#488D9F]"
+                    ? "bg-[#EAF5F8] text-[#488D9F] shadow-sm"
+                    : "text-[#488D9F]/50 hover:bg-[#EAF5F8] hover:text-[#488D9F]"
                 )}
               >
                 <Icon className="w-5 h-5" />
@@ -75,7 +75,7 @@ export function Sidebar({ className }: SidebarProps) {
       {/* Logout */}
       <button
         title="Logout"
-        className="w-12 flex items-center justify-center p-3 rounded-xl text-gray-300 hover:bg-[#EAF5F8] hover:text-[#488D9F] transition-all"
+        className="w-12 flex items-center justify-center p-3 rounded-xl text-[#488D9F]/30 hover:bg-[#EAF5F8] hover:text-[#488D9F] transition-all"
       >
         <LogOut className="w-5 h-5" />
       </button>

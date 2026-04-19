@@ -26,8 +26,8 @@ export function InfoCard({
       className={cn(
         "rounded-2xl border shadow-sm p-5 flex flex-col gap-3",
         accent
-          ? "bg-linear-to-br from-[#12303A] to-[#3E7C8C] text-white border-transparent"
-          : "bg-white border-gray-100 text-[#12303A]",
+          ? "bg-gradient-to-br from-[#12303A] to-[#3E7C8C] text-white border-transparent"
+          : "bg-white border-[#D6ECF0] text-[#12303A]",
         large && "p-6",
         className
       )}
@@ -36,7 +36,7 @@ export function InfoCard({
         <p
           className={cn(
             "text-xs font-semibold uppercase tracking-widest",
-            accent ? "text-white/60" : "text-gray-400"
+            accent ? "text-white/60" : "text-[#488D9F]/70"
           )}
         >
           {title}
@@ -71,7 +71,7 @@ export function InfoCard({
         <p
           className={cn(
             "text-sm",
-            accent ? "text-white/55" : "text-gray-400"
+            accent ? "text-white/55" : "text-[#488D9F]/60"
           )}
         >
           {subtitle}

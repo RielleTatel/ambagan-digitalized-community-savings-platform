@@ -40,14 +40,14 @@ export function OverviewStats({
   return (
     <div
       className={cn(
-        "rounded-2xl bg-white border border-gray-100 shadow-sm p-5 flex flex-col gap-4",
+        "rounded-2xl bg-white border border-[#D6ECF0] shadow-sm p-5 flex flex-col gap-4",
         className
       )}
     >
       {/* Header */}
       <div className="flex items-center justify-between">
         <h3 className="text-base font-bold text-[#12303A]">Overview</h3>
-        <button className="text-xs font-semibold bg-[#12303A] text-white px-4 py-1.5 rounded-full hover:bg-[#1E4D5C] transition-colors">
+        <button className="text-xs font-semibold bg-gradient-to-r from-[#488D9F] to-[#3E7C8C] text-white px-4 py-1.5 rounded-full hover:brightness-105 transition-all shadow-sm">
           Activity Ledger
         </button>
       </div>
@@ -57,9 +57,9 @@ export function OverviewStats({
         {stats.map((stat, i) => (
           <div
             key={i}
-            className="rounded-xl bg-gray-50 border border-gray-100 p-4 flex flex-col gap-1.5"
+            className="rounded-xl bg-[#EAF5F8] border border-[#D6ECF0] p-4 flex flex-col gap-1.5"
           >
-            <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider">
+            <p className="text-[10px] font-semibold text-[#488D9F]/70 uppercase tracking-wider">
               {stat.label}
             </p>
             <p className="text-2xl font-extrabold text-[#12303A] tracking-tight">

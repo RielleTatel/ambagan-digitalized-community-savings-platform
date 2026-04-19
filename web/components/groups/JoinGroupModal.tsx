@@ -84,24 +84,38 @@ export function JoinGroupModal({ isOpen, onClose }: JoinGroupModalProps) {
       onClick={(e) => e.target === e.currentTarget && handleClose()}
     >
       {/* Backdrop */}
-      <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
+      <div className="absolute inset-0 bg-[#12303A]/40 backdrop-blur-sm" />
 
-      {/* Modal */}
-      <div className="relative z-10 w-full max-w-sm rounded-2xl bg-white shadow-xl border border-gray-100 overflow-hidden">
+      {/* Modal panel */}
+      <div
+        className={cn(
+          "relative z-10 w-full max-w-sm rounded-2xl bg-white overflow-hidden",
+          "border border-[#D6ECF0]",
+          "shadow-[0_20px_40px_rgba(72,141,159,0.2),0_0_0_1px_rgba(72,141,159,0.05)]"
+        )}
+      >
+        {/* Header accent bar — teal gradient */}
+        <div className="h-1 w-full bg-gradient-to-r from-[#488D9F] to-[#3E7C8C]" />
+
         {/* Header */}
         <div className="p-6 pb-0 flex items-start justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-[#EAF5F8] flex items-center justify-center">
-              <Users className="w-5 h-5 text-[#488D9F]" />
+            {/* Teal gradient icon */}
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#488D9F] to-[#3E7C8C] flex items-center justify-center shadow-[0_4px_14px_rgba(72,141,159,0.3)]">
+              <Users className="w-5 h-5 text-white" />
             </div>
             <div>
-              <h2 className="text-base font-bold text-[#12303A]">Join a Group</h2>
-              <p className="text-xs text-gray-400 mt-0.5">Enter the 6-digit invite code</p>
+              <h2 className="text-base font-semibold text-[#12303A]">Join a Group</h2>
+              <p className="text-xs text-[#488D9F]/70 mt-0.5">Enter the 6-digit invite code</p>
             </div>
           </div>
+
           <button
             onClick={handleClose}
-            className="w-8 h-8 rounded-lg flex items-center justify-center text-gray-400 hover:bg-gray-100 hover:text-gray-600 transition-colors"
+            className={cn(
+              "w-8 h-8 rounded-lg flex items-center justify-center text-[#488D9F]/60",
+              "hover:bg-[#EAF5F8] hover:text-[#12303A] transition-colors duration-200"
+            )}
           >
             <X className="w-4 h-4" />
           </button>
@@ -123,13 +137,14 @@ export function JoinGroupModal({ isOpen, onClose }: JoinGroupModalProps) {
                 onKeyDown={(e) => handleKeyDown(i, e)}
                 onPaste={handlePaste}
                 className={cn(
-                  "w-11 h-12 rounded-xl border text-center text-lg font-bold text-[#12303A] outline-none transition-all",
-                  "focus:border-[#488D9F] focus:ring-2 focus:ring-[#488D9F]/20",
+                  "w-11 h-12 rounded-xl border text-center text-lg font-bold outline-none",
+                  "bg-white text-[#12303A] transition-all duration-200",
                   error
-                    ? "border-red-300 bg-red-50"
+                    ? "border-red-300 text-red-500 bg-red-50"
                     : code[i]
-                    ? "border-[#488D9F] bg-[#EAF5F8]"
-                    : "border-gray-200 bg-gray-50"
+                    ? "border-[#488D9F] bg-[#EAF5F8] text-[#488D9F]"
+                    : "border-[#D6ECF0] bg-[#F5FBFC] text-[#12303A]",
+                  "focus:border-[#488D9F] focus:ring-2 focus:ring-[#488D9F]/20 focus:bg-white"
                 )}
               />
             ))}
@@ -139,14 +154,20 @@ export function JoinGroupModal({ isOpen, onClose }: JoinGroupModalProps) {
             <p className="text-xs text-red-500 text-center -mt-1">{error}</p>
           )}
 
+          {/* Submit */}
           <button
             onClick={handleSubmit}
             disabled={!isComplete || isSubmitting}
             className={cn(
-              "h-10 rounded-xl text-sm font-semibold flex items-center justify-center gap-2 transition-all duration-150",
+              "group h-11 rounded-xl text-sm font-semibold flex items-center justify-center gap-2 transition-all duration-200 ease-out",
               isComplete && !isSubmitting
-                ? "bg-[#488D9F] text-white hover:bg-[#3E7C8C]"
-                : "bg-gray-100 text-gray-400 cursor-not-allowed"
+                ? cn(
+                    "bg-gradient-to-r from-[#488D9F] to-[#3E7C8C] text-white",
+                    "shadow-[0_4px_14px_rgba(72,141,159,0.3)]",
+                    "hover:shadow-[0_8px_24px_rgba(72,141,159,0.4)] hover:brightness-105 hover:-translate-y-0.5",
+                    "active:scale-[0.98]"
+                  )
+                : "bg-[#EAF5F8] text-[#488D9F]/50 cursor-not-allowed"
             )}
           >
             {isSubmitting ? (
@@ -157,12 +178,12 @@ export function JoinGroupModal({ isOpen, onClose }: JoinGroupModalProps) {
             ) : (
               <>
                 Join Group
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5" />
               </>
             )}
           </button>
 
-          <p className="text-center text-xs text-gray-400">
+          <p className="text-center text-xs text-[#488D9F]/60">
             Ask your group admin for the invite code.
           </p>
         </div>

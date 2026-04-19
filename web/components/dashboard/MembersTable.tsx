@@ -61,9 +61,9 @@ const dummyMembers: Member[] = [
 ];
 
 const statusStyle: Record<MemberStatus, string> = {
-  Active: "bg-emerald-50 text-emerald-600",
-  Late: "bg-amber-50 text-amber-600",
-  Pending: "bg-gray-100 text-gray-500",
+  Active: "bg-emerald-50 text-emerald-600 border border-emerald-100",
+  Late: "bg-amber-50 text-amber-600 border border-amber-100",
+  Pending: "bg-[#EAF5F8] text-[#488D9F]/70 border border-[#D6ECF0]",
 };
 
 interface MembersTableProps {
@@ -78,7 +78,7 @@ export function MembersTable({
   return (
     <div
       className={cn(
-        "rounded-2xl bg-white border border-gray-100 shadow-sm p-5 flex flex-col gap-4",
+        "rounded-2xl bg-white border border-[#D6ECF0] shadow-sm p-5 flex flex-col gap-4",
         className
       )}
     >
@@ -86,11 +86,11 @@ export function MembersTable({
       <div className="flex items-center justify-between">
         <div>
           <h3 className="text-base font-bold text-[#12303A]">Group Members</h3>
-          <p className="text-sm text-gray-400 mt-0.5">
+          <p className="text-sm text-[#488D9F]/60 mt-0.5">
             {members.length} active members this cycle
           </p>
         </div>
-        <button className="text-xs font-semibold text-[#488D9F] hover:underline">
+        <button className="text-xs font-semibold text-[#488D9F] hover:text-[#3E7C8C] hover:underline transition-colors">
           View all →
         </button>
       </div>
@@ -100,25 +100,25 @@ export function MembersTable({
         <table className="w-full min-w-[480px] text-sm">
           <thead>
             <tr className="text-left">
-              <th className="px-2 pb-3 text-xs font-semibold text-gray-400 uppercase tracking-wider">
+              <th className="px-2 pb-3 text-[10px] font-semibold text-[#488D9F]/60 uppercase tracking-wider">
                 Member
               </th>
-              <th className="px-2 pb-3 text-xs font-semibold text-gray-400 uppercase tracking-wider">
+              <th className="px-2 pb-3 text-[10px] font-semibold text-[#488D9F]/60 uppercase tracking-wider">
                 Contribution
               </th>
-              <th className="px-2 pb-3 text-xs font-semibold text-gray-400 uppercase tracking-wider">
+              <th className="px-2 pb-3 text-[10px] font-semibold text-[#488D9F]/60 uppercase tracking-wider">
                 Last Paid
               </th>
-              <th className="px-2 pb-3 text-xs font-semibold text-gray-400 uppercase tracking-wider">
+              <th className="px-2 pb-3 text-[10px] font-semibold text-[#488D9F]/60 uppercase tracking-wider">
                 Status
               </th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-gray-50">
+          <tbody className="divide-y divide-[#EAF5F8]">
             {members.map((member) => (
               <tr
                 key={member.id}
-                className="hover:bg-gray-50/60 transition-colors"
+                className="hover:bg-[#EAF5F8]/50 transition-colors"
               >
                 {/* Name + Avatar */}
                 <td className="px-2 py-3">
@@ -137,8 +137,8 @@ export function MembersTable({
                   </div>
                 </td>
 
-                <td className="px-2 py-3 text-gray-500">{member.contribution}</td>
-                <td className="px-2 py-3 text-gray-500">{member.lastPaid}</td>
+                <td className="px-2 py-3 text-[#488D9F]/70">{member.contribution}</td>
+                <td className="px-2 py-3 text-[#488D9F]/70">{member.lastPaid}</td>
 
                 {/* Status badge */}
                 <td className="px-2 py-3">

@@ -7,21 +7,27 @@ interface GroupStatusBadgeProps {
   className?: string;
 }
 
-const statusConfig: Record<GroupStatus, { label: string; dot: string; badge: string }> = {
+const statusConfig: Record<GroupStatus, { label: string; dot: string; text: string; border: string; bg: string }> = {
   active: {
     label: "Active",
     dot: "bg-emerald-500",
-    badge: "bg-emerald-50 text-emerald-700",
+    text: "text-emerald-700",
+    border: "border-emerald-200",
+    bg: "bg-emerald-50",
   },
   pending_loans: {
     label: "Pending Loans",
-    dot: "bg-amber-500",
-    badge: "bg-amber-50 text-amber-700",
+    dot: "bg-amber-400",
+    text: "text-amber-700",
+    border: "border-amber-200",
+    bg: "bg-amber-50",
   },
   inactive: {
     label: "Inactive",
-    dot: "bg-red-400",
-    badge: "bg-red-50 text-red-600",
+    dot: "bg-slate-400",
+    text: "text-slate-500",
+    border: "border-slate-200",
+    bg: "bg-slate-50",
   },
 };
 
@@ -31,8 +37,10 @@ export function GroupStatusBadge({ status, className }: GroupStatusBadgeProps) {
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-full",
-        config.badge,
+        "inline-flex items-center gap-1.5 text-xs font-medium px-2.5 py-1 rounded-full border",
+        config.bg,
+        config.border,
+        config.text,
         className
       )}
     >
